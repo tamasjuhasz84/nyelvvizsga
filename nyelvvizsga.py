@@ -45,4 +45,10 @@ with open('sikeres.csv', 'r', encoding='LATIN2') as sikeres:
         s=sor.strip().split(';')
         c.execute("INSERT INTO sikeres VALUES(?,?,?,?,?,?,?,?,?,?,?)", s)
     conn.commit()
-    
+
+with open('sikertelen.csv', 'r', encoding='LATIN2') as sikertelen:
+    fejlec=sikertelen.readline()
+    for sor in sikertelen:
+        s=sor.strip().split(';')
+        c.execute("INSERT INTO sikertelen VALUES(?,?,?,?,?,?,?,?,?,?,?)", s)
+    conn.commit()
