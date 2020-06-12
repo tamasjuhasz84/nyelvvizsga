@@ -1,2 +1,2 @@
 def f3():
-    pass
+    print('3. feladat')
