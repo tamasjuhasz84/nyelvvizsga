@@ -1,2 +1,2 @@
 def f5():
-    pass
+    print('feladat5')
