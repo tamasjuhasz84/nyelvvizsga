@@ -1,5 +1,10 @@
 import PySimpleGUI as sg
 import sqlite3
+from feladat2 import f2
+from feladat3 import f3
+from feladat4 import f4
+from feladat5 import f5
+from feladat6 import f6
 
 #SQL
 conn = sqlite3.Connection('nyelvvizsga.db')
@@ -52,3 +57,9 @@ with open('sikertelen.csv', 'r', encoding='LATIN2') as sikertelen:
         s=sor.strip().split(';')
         c.execute("INSERT INTO sikertelen VALUES(?,?,?,?,?,?,?,?,?,?,?)", s)
     conn.commit()
+    
+f2()
+f3()
+f4()
+f5()
+f6()
