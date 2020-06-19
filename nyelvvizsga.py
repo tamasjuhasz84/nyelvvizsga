@@ -9,6 +9,8 @@ from feladat6 import f6
 #SQL
 conn = sqlite3.Connection('nyelvvizsga.db')
 c = conn.cursor()
+c.execute('DROP TABLE sikeres')
+c.execute('DROP TABLE sikertelen')
 c.execute('''
          CREATE TABLE IF NOT EXISTS sikeres (
                                        nyelv  TEXT,
@@ -58,8 +60,14 @@ with open('sikertelen.csv', 'r', encoding='LATIN2') as sikertelen:
         c.execute("INSERT INTO sikertelen VALUES(?,?,?,?,?,?,?,?,?,?,?)", s)
     conn.commit()
     
-f2()
-f3()
-f4()
+a,b,c = f2()
+print(f'2. feladat: A legnépszerűbb nyelvek:')
+print(f'     {a}')
+print(f'     {b}')
+print(f'     {c}')
+print(f'3. feladat:')
+print(f'     Vizsgálandó év: ', end='')
+év=f3()
+f4(év)
 f5()
 f6()

@@ -1,2 +1,3 @@
-def f4():
-    print('4. feladat')
+def f4(macska=2014):
+    
+    print(macska)
