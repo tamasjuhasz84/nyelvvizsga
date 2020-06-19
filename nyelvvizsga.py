@@ -9,8 +9,8 @@ from feladat6 import f6
 #SQL
 conn = sqlite3.Connection('nyelvvizsga.db')
 c = conn.cursor()
-c.execute('DROP TABLE sikeres')
-c.execute('DROP TABLE sikertelen')
+c.execute('DROP TABLE IF EXISTS sikeres')
+c.execute('DROP TABLE IF EXISTS sikertelen')
 c.execute('''
          CREATE TABLE IF NOT EXISTS sikeres (
                                        nyelv  TEXT,
